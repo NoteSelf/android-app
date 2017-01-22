@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cordova run android --device",
     "icons": "cordova-icon",
-    "tw":"cross-env TIDDLYWIKI_PLUGIN_PATH=../../tiddlywiki/plugins_dist npm run TW",
-    "TW":"tiddlywiki ./tw --verbose --build index"
+    "tw":"cross-env TIDDLYWIKI_PLUGIN_PATH=../../tiddlywiki/plugins_dist npm run TW && npm run TW:MOVE",
+    "TW":"tiddlywiki ./tw --verbose --build index",
+    "TW:MOVE":"mv tw/output/index.html www/index.html"
   },
   "author": "Danielo Rodríguez Rivero",
   "license": "MIT",
