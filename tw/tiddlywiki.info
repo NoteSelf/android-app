@@ -1,0 +1,36 @@
+{
+    "plugins": [
+        "danielo515/tiddlypouch",
+        "tiddlywiki/pluginlibrary"
+    ],
+    "themes": [
+        "tiddlywiki/vanilla",
+        "tiddlywiki/snowwhite"
+    ],
+    "languages": [
+        "en-US"
+    ],
+    "build": {
+        "index": [
+            "--rendertiddler",
+            "$:/NoteSelf/save/android",
+            "index.html",
+            "text/plain"
+        ],
+        "readme": [
+            "--rendertiddler",
+            "ReadMe",
+            "readme.md",
+            "text/html",
+            "--rendertiddler",
+            "License",
+            "license.md",
+            "text/html"
+        ],
+        "library": [
+			"--makelibrary","$:/UpgradeLibrary",
+   			"--savelibrarytiddlers","$:/UpgradeLibrary","[prefix[$:/]] -[[$:/plugins/tiddlywiki/upgrade]] -[[$:/plugins/tiddlywiki/translators]] -[[$:/plugins/tiddlywiki/pluginlibrary]] -[[$:/plugins/tiddlywiki/jasmine]] -[[$:/plugins/tiddlywiki/filesystem]] -[[$:/plugins/tiddlywiki/nodewebkitsaver]] -[[$:/plugins/tiddlywiki/tiddlyweb]] -[[$:/plugins/tiddlywiki/tahoelafs]]","recipes/library/tiddlers/","$:/UpgradeLibrary/List",
+   			"--savetiddler","$:/UpgradeLibrary/List","recipes/library/tiddlers.json",
+			"--rendertiddler","$:/plugins/tiddlywiki/pluginlibrary/library.template.html","PluginLibrary.html","text/plain"]
+    }
+}
