@@ -17,15 +17,19 @@
             "index.html",
             "text/plain"
         ],
-        "readme": [
+        "boot":[
+            "--output","./www/js",
+            "--rendertiddler", "does-not-matter", "boot.js", "text/plain", "$:/NoteSelf/android/boot"
+        ],
+        "jsFiles": [
             "--rendertiddler",
-            "ReadMe",
-            "readme.md",
-            "text/html",
+            "$:/boot/bootprefix.js",
+            "tw_bootprefix.js",
+            "text/plain",
             "--rendertiddler",
-            "License",
-            "license.md",
-            "text/html"
+            "$:/boot/boot.js",
+            "tw_boot.js",
+            "text/plain"
         ],
         "library": [
 			"--makelibrary","$:/UpgradeLibrary",

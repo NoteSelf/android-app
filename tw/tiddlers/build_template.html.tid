@@ -24,6 +24,7 @@ title: $:/NoteSelf/templates/android.html
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/pouchdb-6.1.0.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/boot.js"></script>
 <title>NoteSelf — Your selfish notebook</title>
 <!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
 

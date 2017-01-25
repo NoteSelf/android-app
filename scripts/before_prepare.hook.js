@@ -7,10 +7,18 @@ module.exports = function (context) {
     const insertIntent = `
         <intent-filter>
             <action android:name="android.intent.action.SEND" />
-            <action android:name="android.intent.action.SEND_MULTIPLE" />
+            <!-- <action android:name="android.intent.action.SEND_MULTIPLE" /> -->
             <category android:name="android.intent.category.DEFAULT" />
             <data android:mimeType="*/*" />
         </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="file" />
+            <data android:mimeType="*/*" />
+            <data android:pathPattern=".*\\.txt" />
+         </intent-filter>
     `;
     const manifestPath = context.opts.projectRoot + '/platforms/android/AndroidManifest.xml';
     const androidManifest = fs.readFileSync(manifestPath).toString();

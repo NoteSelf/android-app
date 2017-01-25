@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.github.noteself" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="io.github.noteself" version="1.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>NoteSelf</name>
     <description>
        The personal wiki that sincs.
@@ -29,8 +29,8 @@
         <icon density="xhdpi" src="res/android/xhdpi.png" />
         <icon density="xxhdpi" src="res/android/xxhdpi.png" />
         <icon density="xxxhdpi" src="res/android/xxxhdpi.png" />
-        <preference name="AndroidLaunchMode" value="singleTask"/>
-        <hook type="after_prepare" src="scripts/before_prepare.hook.js" />
+        <preference name="AndroidLaunchMode" value="singleTask" />
+        <hook src="scripts/before_prepare.hook.js" type="after_prepare" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -42,4 +42,5 @@
     <engine name="android" spec="~6.0.0" />
     <plugin name="cordova-custom-config" spec="~3.1.2" />
     <plugin name="com.napolitano.cordova.plugin.intent" spec="https://github.com/napolitano/cordova-plugin-intent" />
+    <plugin name="cordova-plugin-file" spec="~4.3.1" />
 </widget>

@@ -9,8 +9,9 @@
     "dev-legacy":"cordova plugin add cordova-plugin-crosswalk-webview && cordova clean && npm run dev",
     "icons": "cordova-icon",
     "tw": "cross-env TIDDLYWIKI_PLUGIN_PATH=../../tiddlywiki/plugins_dist npm run TW && npm run TW:MOVE",
-    "TW": "tiddlywiki ./tw --verbose --build index",
-    "TW:MOVE": "mv tw/output/index.html www/index.html"
+    "TW": "tiddlywiki ./tw --verbose --build index jsFiles",
+    "TW:MOVE": "mv tw/output/index.html www/index.html && mv tw/output/*.js www/js/",
+    "TW:BOOT":"tiddlywiki ./tw --verbose --build boot"
   },
   "author": "Danielo Rodríguez Rivero",
   "license": "MIT",

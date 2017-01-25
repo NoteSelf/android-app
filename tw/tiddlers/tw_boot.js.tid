@@ -1,0 +1,4 @@
+title: $:/NoteSelf/android/boot
+
+{{$:/boot/bootprefix.js}}
+{{$:/boot/boot.js}}
