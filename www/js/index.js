@@ -32,8 +32,8 @@ var $NS = ( function ( ) {
             .wiki
             .generateNewTitle([
                 "Clip ", d.getFullYear(),
-                this.leftPad(d.getMonth() + 1),
-                this.leftPad(d.getDate()),
+                leftPad(d.getMonth() + 1),
+                leftPad(d.getDate()),
                 // leftPad(d.getHours()), leftPad(d.getMinutes()), leftPad(d.getSeconds())
             ].join(""));
     }
@@ -60,13 +60,14 @@ var $NS = {
         function gotFile(fileEntry) {
 
             fileEntry.file(function(file) {
-                var reader = new FileReader();
+                var reader = new FileReader(file);
 
                 reader.onloadend = function(e) {
-                    console.log("Text is: "+this.result);
+                    console.log( "Text is: " + this.result );
+                    alert( 'Filea readed:' + this.result );
                 }
 
-                reader.readAsText(file);
+                reader.readAsText();
             });
 
         }
@@ -82,8 +83,8 @@ var $NS = {
             // Do something with the File
             console.log('Intent has data');
             this.intentFile(Intent);
-            
-        } 
+
+        }
 
         if (Intent.type !== 'text/plain') {
 
