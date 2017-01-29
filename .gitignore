@@ -14,3 +14,5 @@ node_modules
 
 # res
 resources/signing
+
+adb.0.log

@@ -12,13 +12,14 @@
     ],
     "build": {
         "index": [
+            "--output","./www/js",
             "--rendertiddler",
             "$:/NoteSelf/save/android",
             "index.html",
             "text/plain"
         ],
         "boot":[
-            "--output","./www/js",
+            "--output","./www/",
             "--rendertiddler", "does-not-matter", "boot.js", "text/plain", "$:/NoteSelf/android/boot"
         ],
         "jsFiles": [
