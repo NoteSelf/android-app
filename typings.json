@@ -1,0 +1,6 @@
+{
+  "globalDependencies": {
+    "cordova": "registry:dt/cordova#0.0.0+20160819210047",
+    "cordova-plugin-file": "registry:dt/cordova-plugin-file#0.0.0+20160916224823"
+  }
+}

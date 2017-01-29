@@ -2,7 +2,6 @@ import { leftPad, defaultTitle } from './utils';
 
 declare global {
     interface Window {
-        resolveLocalFileSystemURL: Function,
         plugins: {
             intent: {
                 setNewIntentHandler: Function,
