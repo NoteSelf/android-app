@@ -16,3 +16,4 @@ node_modules
 resources/signing
 
 adb.0.log
+bundle.js

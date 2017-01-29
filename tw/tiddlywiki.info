@@ -12,24 +12,25 @@
     ],
     "build": {
         "index": [
-            "--output","./www/js",
+            "--output","./www/",            
             "--rendertiddler",
             "$:/NoteSelf/save/android",
             "index.html",
             "text/plain"
         ],
         "boot":[
-            "--output","./www/",
+            "--output","./www/js",
             "--rendertiddler", "does-not-matter", "boot.js", "text/plain", "$:/NoteSelf/android/boot"
         ],
         "jsFiles": [
+            "--output","./src/tw/",
             "--rendertiddler",
             "$:/boot/bootprefix.js",
-            "tw_bootprefix.js",
+            "bootprefix.js",
             "text/plain",
             "--rendertiddler",
             "$:/boot/boot.js",
-            "tw_boot.js",
+            "boot.js",
             "text/plain"
         ],
         "library": [
