@@ -2,7 +2,6 @@
   "name": "noteself",
   "version": "1.0.0",
   "description": "noteself mobile apps",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cordova run android --device",

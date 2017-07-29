@@ -17,11 +17,7 @@
             "$:/NoteSelf/save/android",
             "index.html",
             "text/plain"
-        ],
-        "boot":[
-            "--output","./www/js",
-            "--rendertiddler", "does-not-matter", "boot.js", "text/plain", "$:/NoteSelf/android/boot"
-        ],
+        ]
         "jsFiles": [
             "--output","./src/tw/",
             "--rendertiddler",
