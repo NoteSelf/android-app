@@ -1,7 +1,7 @@
 
 import tw from './tw';
 import Tpouch from './NS/tpouch'
-import NS from './NS/index.ts'
+import NS from './NS/index'
 window.$tw = tw;
 
 document.addEventListener('deviceready', () =>

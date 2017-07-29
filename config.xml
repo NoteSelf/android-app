@@ -30,6 +30,7 @@
         <icon density="xxhdpi" src="res/android/xxhdpi.png" />
         <icon density="xxxhdpi" src="res/android/xxxhdpi.png" />
         <preference name="AndroidLaunchMode" value="singleTask" />
+        <preference name="android-minSdkVersion" value="22" />
         <hook src="scripts/before_prepare.hook.js" type="after_prepare" />
     </platform>
     <platform name="ios">

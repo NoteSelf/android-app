@@ -19,42 +19,42 @@ export default (tw) => {
 
         defaultTitle: defaultTitle(tw),
 
-        intentFile: function (Intent) {
+        // intentFile: function (Intent) {
 
-            window.resolveLocalFileSystemURL(Intent.data, gotFile, fail);
+        //     window.resolveLocalFileSystemURL(Intent.data, gotFile, fail);
 
-            function fail(e) {
-                console.log("FileSystem Error");
-                console.dir(e);
-            }
+        //     function fail(e) {
+        //         console.log("FileSystem Error");
+        //         console.dir(e);
+        //     }
 
-            function gotFile(fileEntry) {
+        //     function gotFile(fileEntry) {
 
-                fileEntry.file(function (file) {
-                    var reader = new FileReader(file);
+        //         fileEntry.file(function (file) {
+        //             var reader = new FileReader(file);
 
-                    reader.onloadend = function (e) {
-                        console.log("Text is: " + this.result);
-                        alert('Filea readed:' + this.result);
-                    }
+        //             reader.onloadend = function (e) {
+        //                 console.log("Text is: " + this.result);
+        //                 alert('Filea readed:' + this.result);
+        //             }
 
-                    reader.readAsText();
-                });
+        //             reader.readAsText();
+        //         });
 
-            }
-        },
+        //     }
+        // },
         handleIntent: function (Intent) {
             console.log('Intent received', Intent);
             // With intent you'll do almost everything
 
             if (Intent.action === "android.intent.action.MAIN") {
-                return console.log("The app was opened manually and there's not file to open");
+                return console.log("The app was opened manually and there's no file to open");
             }
-            if (Intent.hasOwnProperty('data')) {
-                // Do something with the File
-                console.log('Intent has data');
-                this.intentFile(Intent);
-            }
+            // if (Intent.hasOwnProperty('data')) {
+            //     // Do something with the File
+            //     console.log('Intent has data');
+            //     this.intentFile(Intent);
+            // }
 
             if (Intent.type !== 'text/plain') {
                 return alert('Sorry, only text is allowed at the momment');
