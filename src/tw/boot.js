@@ -271,14 +271,15 @@ $tw.utils.stringifyList = function(value) {
 $tw.utils.parseStringArray = function(value) {
 	if(typeof value === "string") {
 		var memberRegExp = /(?:^|[^\S\xA0])(?:\[\[(.*?)\]\])(?=[^\S\xA0]|$)|([\S\xA0]+)/mg,
-			results = [],
+			results = [], names = {},
 			match;
 		do {
 			match = memberRegExp.exec(value);
 			if(match) {
 				var item = match[1] || match[2];
-				if(item !== undefined && results.indexOf(item) === -1) {
+				if(item !== undefined && !$tw.utils.hop(names,item)) {
 					results.push(item);
+					names[item] = true;
 				}
 			}
 		} while(match);
@@ -826,6 +827,7 @@ taking precedence to the right
 */
 $tw.Tiddler = function(/* [fields,] fields */) {
 	this.fields = Object.create(null);
+	this.cache = Object.create(null);
 	for(var c=0; c<arguments.length; c++) {
 		var arg = arguments[c],
 			src = (arg instanceof $tw.Tiddler) ? arg.fields : arg;
@@ -1318,8 +1320,8 @@ $tw.modules.define("$:/boot/tiddlerdeserializer/html","tiddlerdeserializer",{
 });
 $tw.modules.define("$:/boot/tiddlerdeserializer/json","tiddlerdeserializer",{
 	"application/json": function(text,fields) {
-		var tiddlers = JSON.parse(text);
-		return tiddlers;
+		var data = JSON.parse(text);
+		return $tw.utils.isArray(data) ? data : [data];
 	}
 });
 
@@ -1475,7 +1477,7 @@ $tw.loadTiddlersFromFile = function(filepath,fields) {
 		metadata;
 	if(ext !== ".json" && tiddlers.length === 1) {
 		metadata = $tw.loadMetadataForFile(filepath);
-		tiddlers = [$tw.utils.extend({},metadata,tiddlers[0])];
+		tiddlers = [$tw.utils.extend({},tiddlers[0],metadata)];
 	}
 	return {filepath: filepath, type: type, tiddlers: tiddlers, hasMetaFile: !!metadata};
 };
@@ -1559,6 +1561,9 @@ $tw.loadTiddlersFromSpecification = function(filepath,excludeRegExp) {
 					switch(fieldInfo.source) {
 						case "filename":
 							value = path.basename(filename);
+							break;
+						case "filename-uri-decoded":
+							value = decodeURIComponent(path.basename(filename));
 							break;
 						case "basename":
 							value = path.basename(filename,path.extname(filename));
@@ -1946,9 +1951,12 @@ $tw.boot.startup = function(options) {
 	$tw.utils.registerFileType("video/mp4","base64",".mp4");
 	$tw.utils.registerFileType("audio/mp3","base64",".mp3");
 	$tw.utils.registerFileType("audio/mp4","base64",[".mp4",".m4a"]);
+	$tw.utils.registerFileType("text/markdown","utf8",[".md",".markdown"],{deserializerType:"text/x-markdown"});
 	$tw.utils.registerFileType("text/x-markdown","utf8",[".md",".markdown"]);
 	$tw.utils.registerFileType("application/enex+xml","utf8",".enex");
+	$tw.utils.registerFileType("application/vnd.openxmlformats-officedocument.wordprocessingml.document","base64",".docx");
 	$tw.utils.registerFileType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","base64",".xlsx");
+	$tw.utils.registerFileType("application/vnd.openxmlformats-officedocument.presentationml.presentation","base64",".pptx");
 	$tw.utils.registerFileType("application/x-bibtex","utf8",".bib");
 	$tw.utils.registerFileType("application/epub+zip","base64",".epub");
 	// Create the wiki store for the app
@@ -2137,13 +2145,14 @@ $tw.hooks.addHook = function(hookName,definition) {
 /*
 Invoke the hook by key
 */
-$tw.hooks.invokeHook = function(hookName, value) {
+$tw.hooks.invokeHook = function(hookName /*, value,... */) {
+	var args = Array.prototype.slice.call(arguments,1);
 	if($tw.utils.hop($tw.hooks.names,hookName)) {
 		for (var i = 0; i < $tw.hooks.names[hookName].length; i++) {
-			value = $tw.hooks.names[hookName][i](value);
+			args[0] = $tw.hooks.names[hookName][i].apply(null,args);
 		}
 	}
-	return value;
+	return args[0];
 };
 
 /////////////////////////// Main boot function to decrypt tiddlers and then startup

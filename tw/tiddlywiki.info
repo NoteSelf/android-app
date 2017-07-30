@@ -1,7 +1,9 @@
 {
     "plugins": [
-        "danielo515/tiddlypouch",
-        "tiddlywiki/pluginlibrary"
+        "tiddlywiki/highlight",
+        "tiddlywiki/qrcode",
+        "tiddlywiki/markdown",
+        "danielo515/tiddlypouch"
     ],
     "themes": [
         "tiddlywiki/vanilla",
@@ -17,7 +19,7 @@
             "$:/NoteSelf/save/android",
             "index.html",
             "text/plain"
-        ]
+        ],
         "jsFiles": [
             "--output","./src/tw/",
             "--rendertiddler",
