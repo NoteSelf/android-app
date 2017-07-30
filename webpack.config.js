@@ -1,5 +1,7 @@
 var path = require('path');
 var BitBarWebpackProgressPlugin = require("bitbar-webpack-progress-plugin");
+var webpack = require('webpack');
+var ignore = new webpack.IgnorePlugin(/sjcl.js$|[.]{2}\/package.json$|fs|path/);
 
 module.exports = {
     entry: './src/index.js',
@@ -33,6 +35,7 @@ module.exports = {
         extensions: ['.ts', '.js']
     },
     plugins: [
-        new BitBarWebpackProgressPlugin()
+        new BitBarWebpackProgressPlugin(),
+        ignore
     ]
 };
