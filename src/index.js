@@ -5,7 +5,13 @@ import NS from './NS/index'
 window.$tw = tw;
 
 document.addEventListener('deviceready', () =>
-    Tpouch().then(
+    Tpouch()
+    .then(
         () => NS(tw).initialize()
+    )
+    .then( 
+        $NS => { 
+            window.$NS = $NS;
+        }
     )
     , false);

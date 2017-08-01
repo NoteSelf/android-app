@@ -4,6 +4,14 @@
         "target": "es5",
         "allowJs": false,
         "noImplicitAny": false,
-        "sourceMap": false
-    }
+        "sourceMap": false,
+        "lib": [
+            "es2015",
+            "dom"
+        ]
+    },
+    "exclude": [
+        "platforms",
+        "node_modules"
+    ]
 }

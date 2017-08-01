@@ -1,4 +1,5 @@
 import { leftPad, defaultTitle } from './utils';
+import qr from './qrScanner';
 
 declare global {
     interface Window {
@@ -13,36 +14,38 @@ declare global {
 
 export default (tw) => {
     var $NS = {
+        qr,
         initialize: function () {
-            this.intentHandler()
+            this.intentHandler();
+            return $NS
         },
 
         defaultTitle: defaultTitle(tw),
 
-        // intentFile: function (Intent) {
+        /*intentFile: function (Intent) {
 
-        //     window.resolveLocalFileSystemURL(Intent.data, gotFile, fail);
+            window.resolveLocalFileSystemURL(Intent.data, gotFile, fail);
 
-        //     function fail(e) {
-        //         console.log("FileSystem Error");
-        //         console.dir(e);
-        //     }
+            function fail(e) {
+                console.log("FileSystem Error");
+                console.dir(e);
+            }
 
-        //     function gotFile(fileEntry) {
+            function gotFile(fileEntry) {
 
-        //         fileEntry.file(function (file) {
-        //             var reader = new FileReader(file);
+                fileEntry.file(function (file) {
+                    var reader = new FileReader(file);
 
-        //             reader.onloadend = function (e) {
-        //                 console.log("Text is: " + this.result);
-        //                 alert('Filea readed:' + this.result);
-        //             }
+                    reader.onloadend = function (e) {
+                        console.log("Text is: " + this.result);
+                        alert('Filea readed:' + this.result);
+                    }
 
-        //             reader.readAsText();
-        //         });
+                    reader.readAsText();
+                });
 
-        //     }
-        // },
+            }
+        },*/
         handleIntent: function (Intent) {
             console.log('Intent received', Intent);
             // With intent you'll do almost everything
