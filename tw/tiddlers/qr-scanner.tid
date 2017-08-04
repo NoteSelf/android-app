@@ -1,0 +1,27 @@
+tags: $:/tags/Image
+title: $:/plugins/noteself/android/images/qr-scanner
+
+<svg class="tc-image-full-screen-button tc-image-button" width="22pt" height="22pt" viewBox="0 0 128 128">
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="svg_1">
+   <g id="svg_2">
+    <path id="svg_3" d="m0,8c0,-4.41828 3.58172,-8 8,-8l32,0c4.41828,0 8,3.58172 8,8c0,4.41828 -3.58172,8 -8,8l-24,0l0,24c0,4.41828 -3.58172,8 -8,8c-4.41828,0 -8,-3.58172 -8,-8l0,-32z"/>
+   </g>
+   <g id="svg_4" transform="rotate(-180 104,104) translate(-104,-104) translate(80,80) ">
+    <path id="svg_5" d="m104,112c0,-4.41828 3.58172,-8 8,-8l32,0c4.41828,0 8,3.58172 8,8c0,4.41828 -3.58172,8 -8,8l-24,0l0,24c0,4.41828 -3.58172,8 -8,8c-4.41828,0 -8,-3.58172 -8,-8l0,-32z"/>
+   </g>
+   <g id="svg_6" transform="rotate(-90 24.000000000000018,104.00000000000001) translate(-24,-104) translate(0,80) ">
+    <path id="svg_7" d="m24,112c0,-4.41828 3.58172,-8 8,-8l32,0c4.41828,0 8,3.58172 8,8c0,4.41828 -3.58172,8 -8,8l-24,0l0,24c0,4.41828 -3.58172,8 -8,8c-4.41828,0 -8,-3.58172 -8,-8l0,-32z"/>
+   </g>
+   <g id="svg_8" transform="rotate(90 104,24.00000000000001) translate(-104,-24) translate(80,0) ">
+    <path id="svg_9" d="m104,32c0,-4.41828 3.58172,-8 8,-8l32,0c4.41828,0 8,3.58172 8,8c0,4.41828 -3.58172,8 -8,8l-24,0l0,24c0,4.41828 -3.58172,8 -8,8c-4.41828,0 -8,-3.58172 -8,-8l0,-32z"/>
+   </g>
+  </g>
+  <rect rx="10" stroke="#000" id="svg_10" height="37" width="37" y="45.5" x="45.5" stroke-width="1.5"/>
+ </g>
+</svg>

@@ -11,7 +11,7 @@
     "build": "npm run clean && npm run tw && webpack",
     "webpack": "npm run clean && webpack",
     "watch": "webpack --watch",
-    "tw": "cross-env TIDDLYWIKI_PLUGIN_PATH=../../tiddlywiki/plugins_dist npm run TW",
+    "tw": "cross-env TIDDLYWIKI_PLUGIN_PATH='../../tiddlywiki/plugins_dist;tw-plugins/dist' npm run TW",
     "TW": "tiddlywiki ./tw --verbose --build index jsFiles",
     "TW:JS": "tiddlywiki ./tw --verbose --build jsFiles"
   },

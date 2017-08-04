@@ -36,18 +36,16 @@ export const getValue = (val) => {
     return val;
 }
 
-export const toggleBetween = (a, b) => {
+export const toggleBetween = (...args) => {
 
-    let flag = true;
+    let index = 0;
+    const ln = args.length;
 
     return () => {
 
-        if (flag) {
-            flag = false;
-            return getValue(a);
-        }
-        flag = true;
-        return getValue(b);
+        const val = args[index];
+        index = (index + 1) % ln;
+        return getValue(val);
     }
 }
 

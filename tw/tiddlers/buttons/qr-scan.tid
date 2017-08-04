@@ -1,0 +1,13 @@
+caption: {{$:/core/images/full-screen-button}} {{$:/language/buttons/qr-scanner/caption}}
+description: {{$:/language/buttons/qr-scanner/hint}}
+tags: $:/tags/PageControls
+title: $:/plugins/noteself/android/buttons/qr-scanner
+
+<$button message="ns-qr-scan" tooltip={{$:/language/buttons/qr-scanner/hint}} aria-label={{$:/language/buttons/qr-scanner/caption}} class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+{{$:/plugins/noteself/android/images/qr-scanner}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+<span class="tc-btn-text"><$text text={{$:/language/buttons/qr-scanner/caption}}/></span>
+</$list>
+</$button>

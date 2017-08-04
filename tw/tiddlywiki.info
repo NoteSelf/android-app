@@ -3,7 +3,8 @@
         "tiddlywiki/highlight",
         "tiddlywiki/qrcode",
         "tiddlywiki/markdown",
-        "danielo515/tiddlypouch"
+        "danielo515/tiddlypouch",
+        "noteself/android"
     ],
     "themes": [
         "tiddlywiki/vanilla",
