@@ -4,13 +4,15 @@
   "description": "noteself mobile apps",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run build && cordova run android --device",
+    "dev": "cordova run android --device",
+    "dev:build": "npm run build-plugins && npm run build && npm run dev",
     "dev-legacy": "cordova plugin add cordova-plugin-crosswalk-webview && cordova clean && npm run dev",
     "icons": "cordova-icon",
     "clean": "rimraf www/bundle.js www/index.html",
     "build": "npm run clean && npm run tw && webpack",
     "webpack": "npm run clean && webpack",
     "watch": "webpack --watch",
+    "build-plugins": "(cd tw-plugins && npm run build)",
     "tw": "cross-env TIDDLYWIKI_PLUGIN_PATH='../../tiddlywiki/plugins_dist;tw-plugins/dist' npm run TW",
     "TW": "tiddlywiki ./tw --verbose --build index jsFiles",
     "TW:JS": "tiddlywiki ./tw --verbose --build jsFiles"

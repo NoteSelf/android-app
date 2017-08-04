@@ -294,7 +294,6 @@ gulp.task('default', (cb) => {
         'perform cleanup',
         'bump version',
         [
-            'create docs',
             'copy vanilla files',
             'compile and move styles',
             'compile and move scripts'

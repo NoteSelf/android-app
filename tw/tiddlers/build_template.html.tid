@@ -34,7 +34,7 @@ title: $:/NoteSelf/templates/android.html
 </head>
 <body class="tc-body">
 <!--~~ Qr scanner  ~~-->
-<div id="ns-qr-scanner" style='display:none'>
+<div id="ns-qr-scanner">
     <div class="ns-qr-frame"></div>
     <div class="ns-qr-frame-center"></div>
     <div class="ns-qr-center"></div>

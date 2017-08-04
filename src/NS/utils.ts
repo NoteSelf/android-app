@@ -60,7 +60,7 @@ export function passThrough(fn) {
 
 export const toggleStyle = (domNode, name: string, value: any) => {
 
-    const toggleValue = toggleBetween(Memoize(() => getValue(domNode).style[name]), value);
+    const toggleValue = toggleBetween(value, Memoize(() => getValue(domNode).style[name]));
 
     return () => {
 

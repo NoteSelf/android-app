@@ -1,0 +1,9 @@
+{
+  "title": "$:/plugins/noteself/android",
+  "description": "Glue between tiddlyiki and android Native methods provided by NoteSelf",
+  "author": "NoteSelf",
+  "core-version": ">=5.1.13",
+  "list": "readme",
+  "version": "0.1.0+10",
+  "released": "Fri, 04 Aug 2017 15:34:52 GMT"
+}

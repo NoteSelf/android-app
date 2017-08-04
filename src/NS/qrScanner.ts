@@ -91,9 +91,6 @@ export default {
     toggleScanner,
     scan() {
         return prepareScanner()
-            .then(toggleScanner)
             .then(scan)
-            .then(toggleScanner)
-            .catch(toggleScanner)
     }
 };

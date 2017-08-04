@@ -1,0 +1,12 @@
+html {
+    background-color: transparent;
+    body.tc-body {
+        background-color: transparent;
+        .tc-page-container-wrapper {
+            display: none;
+        }
+        #ns-qr-scanner {
+            display: block;
+        }
+    }
+}

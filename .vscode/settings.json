@@ -1,4 +1,7 @@
 {
     "vsicons.presets.angular": false,
-    "typescript.tsdk": "./node_modules/typescript/lib"
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "eslint.autoFixOnSave": false,
+    "html.format.enable": false,
+    "html.format.contentUnformatted": "html"
 }

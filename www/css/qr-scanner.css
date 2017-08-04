@@ -3,32 +3,32 @@
     height: 100%;
     top: 0;
     left: 0;
-    position:fixed;
+    position: fixed;
     background-color: transparent;
+    display: none;
 }
 
 .ns-qr-frame-center {
     width: 20%;
     height: 60%;
     float: left;
-    background-color: rgba(0,0,0,.5);
-    margin:0;
-    padding:0;
+    background-color: rgba(0, 0, 0, .5);
+    margin: 0;
+    padding: 0;
 }
 
 .ns-qr-center {
-  width: 60%;
-  height:60%;
-  float: left;
-  background-color: transparent;
-  margin:0;
-  padding:0;
+    width: 60%;
+    height: 60%;
+    float: left;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 .ns-qr-frame {
     width: 100%;
     height: 20%;
-    background-color: rgba(0,0,0,.5);
-    clear:both;
+    background-color: rgba(0, 0, 0, .5);
+    clear: both;
 }
-
