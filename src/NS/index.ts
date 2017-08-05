@@ -1,5 +1,7 @@
-import { leftPad, defaultTitle } from './utils';
+import * as utils from './utils';
 import qr from './qrScanner';
+
+const { leftPad, defaultTitle } = utils;
 
 declare global {
     interface Window {
@@ -15,6 +17,7 @@ declare global {
 export default (tw) => {
     var $NS = {
         qr,
+        utils,
         initialize: function () {
             this.intentHandler();
             return $NS
