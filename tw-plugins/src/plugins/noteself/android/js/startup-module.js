@@ -39,6 +39,7 @@ exports.startup = function () {
     const scannerVisbileTitle = '$:/temp/noteself/android/qr-scanner-visible';
     const formatTiddlerTitle = '$:/config/qr-scanner/title';
     const tiddler = $tw.wiki.getTiddler(scannerVisbileTitle);
+    const story = new $tw.Story({ wiki: $tw.wiki });
 
     const showScanner = () => {
 
@@ -66,7 +67,9 @@ exports.startup = function () {
             .then((scanned) => {
 
                 hideScanner();
-                $tw.wiki.addTiddler({ title: newTitle(), text: scanned });
+                const title = newTitle();
+                $tw.wiki.addTiddler(new $tw.Tiddler({ title, text: scanned }, $tw.wiki.getModificationFields(), $tw.wiki.getCreationFields()));
+                story.addToStory(title);
             })
             .catch(hideScanner);
     });
