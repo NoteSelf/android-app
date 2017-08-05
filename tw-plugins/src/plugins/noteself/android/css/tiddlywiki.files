@@ -1,10 +1,18 @@
 {
     "tiddlers": [{
-        "file": "qrVisible.css",
-        "fields": {
-            "title": "$:/temp/noteself/android/qr-scanner-visible",
-            "type": "text/vnd.tiddlywiki"
-
+            "file": "qrVisible.css",
+            "fields": {
+                "title": "$:/temp/noteself/android/qr-scanner-visible",
+                "type": "text/vnd.tiddlywiki"
+            }
+        },
+        {
+            "file": "layout.css",
+            "fields": {
+                "title": "$:/plugins/noteself/android/styles/layout.css",
+                "type": "text/vnd.tiddlywiki",
+                "tags": ["$:/tags/Stylesheet"]
+            }
         }
-    }]
+    ]
 }
