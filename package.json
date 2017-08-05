@@ -1,6 +1,6 @@
 {
   "name": "noteself",
-  "version": "1.0.0",
+  "version": "1.2.2",
   "description": "noteself mobile apps",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,6 +12,7 @@
     "build": "npm run clean && npm run tw && webpack",
     "webpack": "npm run clean && webpack",
     "watch": "webpack --watch",
+    "tag": "cordova-xml setVersion %npm_package_version%",
     "build-plugins": "(cd tw-plugins && npm run build)",
     "tw": "cross-env TIDDLYWIKI_PLUGIN_PATH='../../tiddlywiki/plugins_dist;tw-plugins/dist' npm run TW",
     "TW": "tiddlywiki ./tw --verbose --build index jsFiles",
@@ -25,10 +26,11 @@
     "babel-preset-es2015": "^6.22.0",
     "bitbar-webpack-progress-plugin": "^0.1.3",
     "cordova-icon": "^0.9.1",
+    "cordova-xml": "^1.1.0",
     "cross-env": "^3.1.4",
     "ts-loader": "^2.0.0",
-    "webpack": "^2.2.0",
-    "typescript": "^2.4.2"
+    "typescript": "^2.4.2",
+    "webpack": "^2.2.0"
   },
   "dependencies": {
     "cordova-custom-config": "^3.1.2",
