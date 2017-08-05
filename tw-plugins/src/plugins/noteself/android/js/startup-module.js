@@ -37,6 +37,7 @@ exports.synchronous = true;
 exports.startup = function () {
 
     const scannerVisbileTitle = '$:/temp/noteself/android/qr-scanner-visible';
+    const formatTiddlerTitle = '$:/config/qr-scanner/title';
     const tiddler = $tw.wiki.getTiddler(scannerVisbileTitle);
 
     const showScanner = () => {
@@ -49,6 +50,11 @@ exports.startup = function () {
         $tw.wiki.addTiddler(new $tw.Tiddler(tiddler, { tags: [] }));
     };
 
+    const newTitle = () => {
+
+        const format = $tw.wiki.getTiddlerText(formatTiddlerTitle);
+        return $tw.utils.formatDateString(new Date(), format || 'YYYY-0MM-0DD 0hh:0mm');
+    }
 
     $tw.rootWidget.addEventListener('ns-qr-scan', () => {
         if (!$NS || !window.$NS) {
@@ -60,7 +66,7 @@ exports.startup = function () {
             .then((scanned) => {
 
                 hideScanner();
-                $tw.wiki.addTiddler({ title: 'scanned', text: scanned });
+                $tw.wiki.addTiddler({ title: newTitle(), text: scanned });
             })
             .catch(hideScanner);
     });
