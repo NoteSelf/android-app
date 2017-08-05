@@ -22,6 +22,6 @@ title: $:/plugins/noteself/android/images/qr-scanner
     <path id="svg_9" d="m104,32c0,-4.41828 3.58172,-8 8,-8l32,0c4.41828,0 8,3.58172 8,8c0,4.41828 -3.58172,8 -8,8l-24,0l0,24c0,4.41828 -3.58172,8 -8,8c-4.41828,0 -8,-3.58172 -8,-8l0,-32z"/>
    </g>
   </g>
-  <rect rx="10" stroke="#000" id="svg_10" height="37" width="37" y="45.5" x="45.5" stroke-width="1.5"/>
+  <rect rx="10" id="svg_10" height="37" width="37" y="45.5" x="45.5" stroke-width="1.5"/>
  </g>
 </svg>
