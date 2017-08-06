@@ -48,6 +48,7 @@ exports.startup = function () {
 
     const hideScanner = () => {
 
+        setTimeout(() => document.body.style.backgroundColor = '', 100);
         $tw.wiki.addTiddler(new $tw.Tiddler(tiddler, { tags: [] }));
     };
 

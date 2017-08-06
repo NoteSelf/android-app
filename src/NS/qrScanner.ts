@@ -4,13 +4,22 @@ let twDocument: HTMLElement;
 interface QRScanner {
     prepare: Function
     scan: Function
-    show: Function,
+    show: Function
     hide: Function
+    destroy: Function
 };
 
 declare const QRScanner: QRScanner;
 
 import { toggleStyle, passThrough } from './utils';
+
+let destroyTimeout = null;
+
+const info = {
+    status: {
+        prepared: false
+    }
+};
 
 const getScannerDomNode = (): HTMLElement => {
 
@@ -43,19 +52,42 @@ const toggleScanner = passThrough((): void => {
     toggleBodyColor();
 });
 
+const setStatus = (status) => {
+    info.status = status;
+    console.info('Status:', status);
+    return info.status;
+}
+
+const clearDestroy = () => {
+
+    (destroyTimeout != null) && clearTimeout(destroyTimeout);
+    destroyTimeout = null;
+}
+
+const destroyScanner = () => {
+
+    clearDestroy();
+    QRScanner.destroy();
+    console.log('Scanner is about to be disabled');
+}
 
 const prepareScanner = () => {
+
+    clearDestroy();
+    /*     if (info.status.prepared) {
+            return Promise.resolve(info.status);
+        } */
 
     return new Promise((resolve, reject) => {
 
         const done = (err, status) => {
+
             if (err) {
                 return reject(err);
             }
 
-            console.log('QRScanner is initialized. Status:');
-            console.log(status);
-            resolve(status);
+            console.log('QRScanner is initialized');
+            resolve(setStatus(status));
         };
 
         QRScanner.prepare(done);
@@ -64,6 +96,7 @@ const prepareScanner = () => {
 
 const hideScanner = (any) => {
 
+    destroyTimeout = setTimeout(destroyScanner, 30000);
     QRScanner.hide();
     return any;
 }
@@ -88,7 +121,8 @@ const scan = () => {
 }
 
 export default {
-    toggleScanner,
+    info,
+    /* toggleScanner, */
     scan() {
         return prepareScanner()
             .then(scan)
