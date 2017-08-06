@@ -1,0 +1,15 @@
+caption: {{$:/core/images/permalink-button}} {{$:/language/Buttons/Permalink/Caption}}
+created: 20170806142128020
+description: {{$:/language/Buttons/Permalink/Hint}}
+modified: 20170806142129184
+title: $:/core/ui/Buttons/permalink
+type: text/vnd.tiddlywiki
+
+<$button message="tm-permalink" tooltip={{$:/language/Buttons/Permalink/Hint}} aria-label={{$:/language/Buttons/Permalink/Caption}} class=<<tv-config-toolbar-class>>>
+<$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+{{$:/core/images/permalink-button}}
+</$list>
+<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+<span class="tc-btn-text"><$text text={{$:/language/Buttons/Permalink/Caption}}/></span>
+</$list>
+</$button>

@@ -55,7 +55,7 @@
         "start": "npm run gulp-dev && npm run nodemon",
         "nodemon": "gulp watch & nodemon --exec npm run tw_start",
         "tw": "cross-env TIDDLYWIKI_PLUGIN_PATH=./dist tiddlywiki ./wiki --verbose",
-        "tw-start": "npm run tw -- --server 8087 $:/core/save/all text/plain text/html '' '' 0.0.0.0",
+        "tw-start": "npm run tw -- --server 8087 $:/core/save/all text/plain text/html",
         "gulp-dev": "gulp dev",
         "gulp-watch": "gulp watch"
     }
