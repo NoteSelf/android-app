@@ -1,65 +1,66 @@
 {
-  "name": "android",
-  "version": "0.1.0",
-  "author": "NoteSelf <rdanielo@gmail.com>",
-  "description": "Glue between tiddlyiki and android Native methods provided by NoteSelf",
-  "license": "MIT",
-  "private": true,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/noteself/TW5-android"
-  },
-  "bugs": {
-    "url": "https://github.com/noteself/TW5-android/issues"
-  },
-  "keywords": [
-    "tiddlywiki",
-    "tw5",
-    "wiki",
-    "browser"
-  ],
-  "devDependencies": {
-    "async": "^2.1.4",
-    "babel-cli": "^6.18.0",
-    "babel-plugin-transform-object-rest-spread": "^6.19.0",
-    "babel-preset-latest": "^6.16.0",
-    "cross-env": "^4.0.0",
-    "del": "^2.0.0",
-    "eslint": "^3.3.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-bump": "^2.5.1",
-    "gulp-debug": "^3.0.0",
-    "gulp-esprima": "^0.1.0",
-    "gulp-if": "^2.0.0",
-    "gulp-jsdoc3": "^1.0.1",
-    "gulp-replace": "^0.5.4",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^1.9.1",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.1",
-    "ink-docstrap": "^1.3.0",
-    "is-there": "^4.3.1",
-    "nodemon": "^1.11.0",
-    "npm-check-updates": "^2.8.8",
-    "run-sequence": "^1.1.5",
-    "semver": "^5.1.0",
-    "tiddlywiki": "^5.1.*",
-    "yargs": "^6.5.0"
-  },
-  "scripts": {
-    "build": "gulp",
-    "build:production": "gulp --production",
-    "build:index": "npm run tw -- --build index",
-    "docs": "gulp 'create docs'",
-    "start": "npm run gulp-dev && npm run nodemon",
-    "nodemon": "gulp watch & nodemon --exec npm run tw_start",
-    "tw": "cross-env TIDDLYWIKI_PLUGIN_PATH=./dist tiddlywiki ./wiki --verbose",
-    "tw-start": "npm run tw -- --server 8087 $:/core/save/all text/plain text/html",
-    "gulp-dev": "gulp dev",
-    "gulp-watch": "gulp watch"
-  },
-  "dependencies": {
-    "slideout": "^1.0.1"
-  }
+    "name": "android",
+    "version": "0.1.0",
+    "author": "NoteSelf <rdanielo@gmail.com>",
+    "description": "Glue between tiddlyiki and android Native methods provided by NoteSelf",
+    "license": "MIT",
+    "private": true,
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/noteself/TW5-android"
+    },
+    "bugs": {
+        "url": "https://github.com/noteself/TW5-android/issues"
+    },
+    "keywords": [
+        "tiddlywiki",
+        "tw5",
+        "wiki",
+        "browser"
+    ],
+    "devDependencies": {
+        "async": "^2.1.4",
+        "babel-cli": "^6.18.0",
+        "babel-plugin-transform-object-rest-spread": "^6.19.0",
+        "babel-preset-latest": "^6.16.0",
+        "cross-env": "^4.0.0",
+        "del": "^2.0.0",
+        "eslint": "^3.3.0",
+        "gulp": "^3.9.1",
+        "gulp-babel": "^6.1.2",
+        "gulp-bump": "^2.5.1",
+        "gulp-debug": "^3.0.0",
+        "gulp-esprima": "^0.1.0",
+        "gulp-if": "^2.0.0",
+        "gulp-jsdoc3": "^1.0.1",
+        "gulp-replace": "^0.5.4",
+        "gulp-sass": "^3.1.0",
+        "gulp-sourcemaps": "^1.9.1",
+        "gulp-uglify": "^2.0.0",
+        "gulp-util": "^3.0.1",
+        "ink-docstrap": "^1.3.0",
+        "is-there": "^4.3.1",
+        "nodemon": "^1.11.0",
+        "npm-check-updates": "^2.8.8",
+        "run-sequence": "^1.1.5",
+        "semver": "^5.1.0",
+        "tiddlywiki": "^5.1.*",
+        "yargs": "^6.5.0"
+    },
+    "scripts": {
+        "build": "gulp",
+        "build:production": "gulp --production",
+        "build:index": "npm run tw -- --build index",
+        "docs": "gulp 'create docs'",
+        "nodemon": "cross-env TIDDLYWIKI_PLUGIN_PATH=./dist nodemon node_modules/tiddlywiki/tiddlywiki.js ./wiki --verbose --server 8087 $:/core/save/all text/plain text/html",
+        "start": "npm run gulp-dev & npm run nodemon",
+        "tw-watch": "nodemon --exec npm run tw-start",
+        "tw": "cross-env TIDDLYWIKI_PLUGIN_PATH=./dist tiddlywiki ./wiki --verbose",
+        "tw-start": "npm run tw -- --server 8087 $:/core/save/all text/plain text/html",
+        "gulp-dev": "gulp dev",
+        "gulp-watch": "gulp watch"
+    },
+    "dependencies": {
+        "slideout": "^1.0.1"
+    }
 }

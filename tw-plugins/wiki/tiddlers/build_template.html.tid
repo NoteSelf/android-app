@@ -1,0 +1,61 @@
+title: $:/NoteSelf/templates/android.html
+
+\rules only filteredtranscludeinline transcludeinline
+<!doctype html>
+{{$:/core/templates/MOTW.html}}<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />		<!-- Force IE standards mode for Intranet and HTA - should be the first meta -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+
+
+<meta name="application-name" content="NoteSelf" />
+<meta name="generator" content="NoteSelf" />
+<meta name="tiddlywiki-version" content="{{$:/core/templates/version}}" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="copyright" content="{{$:/core/copyright.txt}}" />
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/qr-scanner.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/pouchdb-6.1.0.min.js"></script>
+    <script type="text/javascript" src="bundle.js"></script>
+<title>NoteSelf — Your selfish notebook</title>
+<!--~~ This is a Tiddlywiki file. The points of interest in the file are marked with this pattern ~~-->
+
+<!--~~ Raw markup ~~-->
+{{{ [all[shadows+tiddlers]tag[$:/core/wiki/rawmarkup]] [all[shadows+tiddlers]tag[$:/tags/RawMarkup]] -[[$:/plugins/danielo515/tiddlypouch/boot]] ||$:/core/templates/plain-text-tiddler}}}
+{{{[all[tiddlers]field:plugin-type[plugin]]||$:/core/templates/head-area-tiddlers}}}
+</head>
+<body class="tc-body">
+<!--~~ Qr scanner  ~~-->
+<div id="ns-qr-scanner">
+    <div class="ns-qr-frame"></div>
+    <div class="ns-qr-frame-center"></div>
+    <div class="ns-qr-center"></div>
+    <div class="ns-qr-frame-center"></div>
+    <div class="ns-qr-frame"></div>
+</div>
+<!--~~ Static styles ~~-->
+<div id="styleArea">
+{{$:/boot/boot.css||$:/core/templates/css-tiddler}}
+</div>
+<!--~~ Static content for Google and browsers without JavaScript ~~-->
+<noscript>
+<div id="splashArea">
+{{$:/core/templates/static.area}}
+</div>
+</noscript>
+<!--~~ Ordinary tiddlers ~~-->
+{{$:/core/templates/store.area.template.html}}
+<!--~~ Library modules ~~-->
+<div id="libraryModules" style="display:none;">
+{{{ [is[system]type[application/javascript]library[yes]] ||$:/core/templates/javascript-tiddler}}}
+</div>
+</body>
+</html>
