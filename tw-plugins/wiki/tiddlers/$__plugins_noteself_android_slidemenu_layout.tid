@@ -1,0 +1,34 @@
+created: 20170807091706391
+modified: 20170808084859556
+tags: $:/tags/PageTemplate
+title: $:/plugins/noteself/android/slidemenu/layout
+type: text/vnd.tiddlywiki
+
+\define config-title()
+$:/config/PageControlButtons/Visibility/$(listItem)$
+\end
+<$sidebar>
+<div class="tc-sidebar-header">
+
+<h1 class="tc-site-title">
+
+<$transclude tiddler="$:/SiteTitle" mode="inline"/>
+
+</h1>
+
+<div class="tc-site-subtitle">
+
+<$transclude tiddler="$:/SiteSubtitle" mode="inline"/>
+
+</div>
+</div>
+<div class="sidebar-section">
+<$set name="tv-config-toolbar-text" value="yes">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]" variable="listItem">
+<$reveal type="nomatch" tag="div" state=<<config-title>> class="sidebar-control" text="hide">
+<$transclude tiddler=<<listItem>>/>
+</$reveal>
+</$list>
+</$set>
+</div>
+</$sidebar>

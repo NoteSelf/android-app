@@ -325,4 +325,5 @@ gulp.task('watch', function () {
     gulp.watch(pluginSrc + '/**/*.js', ['dev']);
     gulp.watch(pluginSrc + '/**/*.tid', ['dev']);
     gulp.watch(pluginSrc + '/**/*.scss', ['dev']);
+    gulp.watch(pluginSrc + '/**/*.files', ['dev']);
 });

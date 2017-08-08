@@ -1,0 +1,10 @@
+{
+    "tiddlers": [{
+        "file": "../../../../node_modules/slideout/dist/slideout.min.js",
+        "fields": {
+            "title": "$:/plugins/noteself/android/slideout",
+            "type": "application/javascript",
+            "module-type": "library"
+        }
+    }]
+}

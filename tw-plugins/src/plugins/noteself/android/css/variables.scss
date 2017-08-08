@@ -1,0 +1,3 @@
+@function twColor($varname) {
+    @return unquote('<<color "#{$varname}">>')
+}

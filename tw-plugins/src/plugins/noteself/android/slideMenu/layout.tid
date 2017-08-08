@@ -1,0 +1,7 @@
+created: 20170807091706391
+modified: 20170807163521351
+tags: $:/tags/PageTemplate
+title: $:/plugins/noteself/android/slidemenu/layout
+type: text/vnd.tiddlywiki
+
+<$sidebar>{{$:/core/ui/PageTemplate/sidebar}}</$sidebar>
