@@ -2,7 +2,7 @@
 <widget id="io.github.noteself" version="1.2.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>NoteSelf</name>
     <description>
-       The personal wiki that sincs.
+       The personal wiki that syncs.
     </description>
     <author email="rdanielo@gmail.com" href="http://noteself.github.io">
         Danielo Rodríguez Rivero
