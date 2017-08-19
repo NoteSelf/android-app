@@ -57,6 +57,8 @@ class Sidebar extends Widget {
                 'tolerance': 70
             });
 
+            $NS.menu = $NS.menu || slideout;
+
         }
         this.renderChildren(menu, null);
 

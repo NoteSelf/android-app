@@ -1,6 +1,6 @@
-created: 20170808090747060
-list: $:/ControlPanel $:/plugins/noteself/android $:/plugins/noteself/android/slidemenu/layout $:/AdvancedSearch $:/core/ui/AdvancedSearch/Standard
-modified: 20170808090747060
+created: 20170808093754384
+list: $:/plugins/noteself/android $:/plugins/noteself/android/slidemenu/layout $:/AdvancedSearch $:/core/ui/AdvancedSearch/Standard
+modified: 20170808093754384
 title: $:/StoryList
 type: text/vnd.tiddlywiki
 

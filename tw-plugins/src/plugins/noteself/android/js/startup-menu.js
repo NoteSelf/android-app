@@ -1,11 +1,9 @@
 /*\
-title: $:/plugins/noteself/android/startup/core-overrider.js
+title: $:/plugins/noteself/android/startup/slidemenu.js
 type: application/javascript
 module-type: startup
 
-This module has only one purpose: Override default tw tiddlers.
-Instead of including the tiddlers on the plugin as shadow tiddlers
-we dynamically require them here and remove/add any required functionality
+Adds hooks to close the menu
 
 @preserve
 
@@ -17,7 +15,7 @@ we dynamically require them here and remove/add any required functionality
 
 
 // Export name and synchronous status
-exports.name = 'core-overrider';
+exports.name = 'slide-menu';
 
 exports.after = ['startup'];
 // Allowed options are browser, node or both
@@ -41,6 +39,10 @@ exports.startup = function () {
         addTiddler($tw.wiki.getTiddler(title), newTags)
     };
 
-    //overrideTags('$:/core/ui/PageTemplate/sidebar', []);
+    $tw.hooks.addHook('th-navigating', (evt) => {
+
+        $NS.menu && $NS.menu.close();
+        return evt;
+    });
 
 };
